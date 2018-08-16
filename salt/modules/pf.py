@@ -33,6 +33,7 @@ def __virtual__():
             'OS (' + __grains__['os'] + ') is not tested or the pfctl binary '
             'was not found')
 
+
 def enable():
     '''
     Enable the Packet Filter.
@@ -115,7 +116,7 @@ def loglevel(level):
 
     myos = __grains__['os']
     if myos == 'FreeBSD':
-        all_levels = ['none', 'urgent' ,'misc', 'loud']
+        all_levels = ['none', 'urgent', 'misc', 'loud']
     else:
         all_levels = ['emerg', 'alert', 'crit', 'err', 'warning', 'notice', 'info', 'debug']
     if level not in all_levels:
